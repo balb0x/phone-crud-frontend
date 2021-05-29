@@ -39,6 +39,7 @@ export default {
     },
     getIdentity: () => { /* ... */ },
     getPermissions: () => {
+        console.log(localStorage.getItem('permissions'))
         const role = localStorage.getItem('permissions');
         return role ? Promise.resolve(role) : Promise.reject();
     }

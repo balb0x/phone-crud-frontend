@@ -9,9 +9,13 @@ import dataProvider from './providers/dataProvider';
 
 const App = () => (
     <Admin dashboard={Dashboard} authProvider={authProvider} dataProvider={dataProvider}>
-        <Resource name="brand" list={BrandList} edit={BrandEdit} create={BrandCreate}/>
-        <Resource name="phone" list={PhoneList} edit={PhoneEdit} create={PhoneCreate}/>
-
+        {permissions => [
+            <Resource name="phone" list={PhoneList} edit={PhoneEdit} create={PhoneCreate}/>,
+            // Only include the categories resource for admin users
+            permissions === 'admin'
+                ? <Resource name="brand" list={BrandList} edit={BrandEdit} create={BrandCreate}/>
+                : null,
+        ]}
     </Admin>
 );
 export default App;
