@@ -7,9 +7,9 @@ export const BrandList = props => (
             <TextField source="name" />
             <TextField source="country" />
             <NumberField source="year" />
-            <TextField source="ceo" />
-            <NumberField source="entry" />
-            <TextField source="isin" />
+            <TextField label="CEO" source="ceo" />
+            <NumberField label="Income ($)" source="entry" />
+            <TextField label="ISIN" source="isin" />
         </Datagrid>
     </List>
 );
@@ -20,9 +20,9 @@ export const BrandEdit = props => (
             <TextInput source="name" />
             <TextInput source="country" />
             <NumberInput source="year" />
-            <TextInput source="ceo" />
-            <NumberInput source="entry" />
-            <TextInput source="isin" />
+            <TextInput label="CEO" source="ceo" />
+            <NumberInput label="Income ($)" source="entry" />
+            <TextInput label="ISIN" source="isin" />
         </SimpleForm>
     </Edit>
 );
@@ -33,9 +33,9 @@ export const BrandCreate = props => (
             <TextInput source="name" />
             <TextInput source="country" />
             <NumberInput source="year" />
-            <TextInput source="ceo" />
-            <NumberInput source="entry" />
-            <TextInput source="isin" />
+            <TextInput label="CEO" source="ceo" />
+            <NumberInput label="Income ($)" source="entry" />
+            <TextInput label="ISIN" source="isin" />
         </SimpleForm>
     </Create>
 );

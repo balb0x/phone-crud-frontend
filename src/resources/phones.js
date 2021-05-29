@@ -36,8 +36,8 @@ export const PhoneEdit = props => (
             <TextInput source="name" />
             <TextInput source="so" />
             <BooleanInput source="water_proof" />
-            <BooleanInput source="h5g" />
-            <NumberInput source="ram" />
+            <BooleanInput label="5G Support" source="h5g" />
+            <NumberInput label="RAM (GB)" source="ram" />
         </SimpleForm>
     </Edit>
 );
@@ -51,8 +51,8 @@ export const PhoneCreate = props => (
             <TextInput source="name" />
             <TextInput source="so" />
             <BooleanInput source="water_proof" />
-            <BooleanInput source="h5g" />
-            <NumberInput source="ram" />
+            <BooleanInput label="5G Support" source="h5g" />
+            <NumberInput label="RAM (GB)" source="ram" />
         </SimpleForm>
     </Create>
 );
