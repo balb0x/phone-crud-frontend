@@ -3,7 +3,9 @@ import decodeJwt from 'jwt-decode';
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
     login: ({ username, password }) => {
-        const request = new Request('http://127.0.0.1:5000/api/login', {
+        const apiUrl = process.env.REACT_APP_BACKEND_URL;
+
+        const request = new Request(apiUrl + '/login', {
             method: 'POST',
             body: JSON.stringify({ username, password }),
             headers: new Headers({ 'Content-Type': 'application/json' }),
@@ -39,7 +41,6 @@ export default {
     },
     getIdentity: () => { /* ... */ },
     getPermissions: () => {
-        console.log(localStorage.getItem('permissions'))
         const role = localStorage.getItem('permissions');
         return role ? Promise.resolve(role) : Promise.reject();
     }

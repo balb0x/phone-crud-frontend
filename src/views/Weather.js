@@ -3,8 +3,10 @@ import ReactWeather, { useOpenWeather } from 'react-open-weather';
 
 
 const Forecast = () => {
+    const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+
     const { data, isLoading, errorMessage } = useOpenWeather({
-        key: 'ea89fc8424cc386f608a928d67911a32',
+        key: API_KEY,
         lat: '40.4167',
         lon: '-3.70325',
         lang: 'en',
