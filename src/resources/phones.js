@@ -10,8 +10,9 @@ import { List,
     SelectInput,
     Create,
     TextInput,
-    BooleanInput,
-    NumberInput,} from 'react-admin';
+    NullableBooleanInput,
+    NumberInput,
+    required,} from 'react-admin';
 
 export const PhoneList = props => (
     <List {...props}>
@@ -30,14 +31,14 @@ export const PhoneList = props => (
 export const PhoneEdit = props => (
     <Edit {...props} mutationMode={"optimistic"}>
         <SimpleForm>
-            <ReferenceInput label="Brand" source="brand.id" reference="brand">
+            <ReferenceInput validate={[required()]} label="Brand" source="brand.id" reference="brand">
                 <SelectInput optionText="name" />
             </ReferenceInput>
-            <TextInput source="name" />
-            <TextInput source="so" />
-            <BooleanInput source="water_proof" />
-            <BooleanInput label="5G Support" source="h5g" />
-            <NumberInput label="RAM (GB)" source="ram" />
+            <TextInput validate={[required()]} source="name" />
+            <TextInput validate={[required()]} source="so" />
+            <NullableBooleanInput validate={[required()]} source="water_proof" />
+            <NullableBooleanInput validate={[required()]} label="5G Support" source="h5g" />
+            <NumberInput validate={[required()]} label="RAM (GB)" source="ram" />
         </SimpleForm>
     </Edit>
 );
@@ -45,14 +46,14 @@ export const PhoneEdit = props => (
 export const PhoneCreate = props => (
     <Create {...props}>
         <SimpleForm>
-            <ReferenceInput label="Brand" source="brand.id" reference="brand">
+            <ReferenceInput validate={[required()]} label="Brand" source="brand.id" reference="brand">
                 <SelectInput optionText="name" />
             </ReferenceInput>
-            <TextInput source="name" />
-            <TextInput source="so" />
-            <BooleanInput source="water_proof" />
-            <BooleanInput label="5G Support" source="h5g" />
-            <NumberInput label="RAM (GB)" source="ram" />
+            <TextInput validate={[required()]} source="name" />
+            <TextInput validate={[required()]} source="so" />
+            <NullableBooleanInput validate={[required()]} source="water_proof" />
+            <NullableBooleanInput validate={[required()]} label="5G Support" source="h5g" />
+            <NumberInput validate={[required()]} label="RAM (GB)" source="ram" />
         </SimpleForm>
     </Create>
 );

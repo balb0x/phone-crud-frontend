@@ -1,5 +1,5 @@
 import * as React from "react";
-import {List, Datagrid, TextField, NumberField, Edit, SimpleForm, NumberInput, TextInput, Create} from 'react-admin';
+import {List, Datagrid, TextField, NumberField, Edit, SimpleForm, NumberInput, TextInput, Create, required } from 'react-admin';
 
 export const BrandList = props => (
     <List {...props}>
@@ -17,12 +17,12 @@ export const BrandList = props => (
 export const BrandEdit = props => (
     <Edit {...props} mutationMode={"optimistic"}>
         <SimpleForm>
-            <TextInput source="name" />
-            <TextInput source="country" />
-            <NumberInput source="year" />
-            <TextInput label="CEO" source="ceo" />
-            <NumberInput label="Income ($)" source="entry" />
-            <TextInput label="ISIN" source="isin" />
+            <TextInput validate={[required()]} source="name" />
+            <TextInput validate={[required()]} source="country" />
+            <NumberInput validate={[required()]} source="year" />
+            <TextInput validate={[required()]} label="CEO" source="ceo" />
+            <NumberInput validate={[required()]} label="Income ($)" source="entry" />
+            <TextInput validate={[required()]} label="ISIN" source="isin" />
         </SimpleForm>
     </Edit>
 );
@@ -30,12 +30,12 @@ export const BrandEdit = props => (
 export const BrandCreate = props => (
     <Create {...props}>
         <SimpleForm>
-            <TextInput source="name" />
-            <TextInput source="country" />
-            <NumberInput source="year" />
-            <TextInput label="CEO" source="ceo" />
-            <NumberInput label="Income ($)" source="entry" />
-            <TextInput label="ISIN" source="isin" />
+            <TextInput validate={[required()]} source="name" />
+            <TextInput validate={[required()]} source="country" />
+            <NumberInput validate={[required()]} source="year" />
+            <TextInput validate={[required()]} label="CEO" source="ceo" />
+            <NumberInput validate={[required()]} label="Income ($)" source="entry" />
+            <TextInput validate={[required()]} label="ISIN" source="isin" />
         </SimpleForm>
     </Create>
 );

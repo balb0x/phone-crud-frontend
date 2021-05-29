@@ -98,6 +98,6 @@ export default {
         };
         return httpClient(`${apiUrl}/${resource}?${stringify(query)}`, {
             method: 'DELETE',
-        }).then(({ json }) => ({ data: json }));
+        }).then(({ json }) => ({ data: json.results }));
     }
 };
