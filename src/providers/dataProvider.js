@@ -33,13 +33,12 @@ export default {
 
     getOne: (resource, params) =>
         httpClient(`${apiUrl}/${resource}/${params.id}`).then(({ json }) => ({
-            data: json,
+            data: json.results,
         })),
 
     getMany: (resource, params) => {
-        console.log(params)
         const query = {
-            filter: JSON.stringify({ id: params.ids }),
+            ids: params.ids.join(","),
         };
         const url = `${apiUrl}/${resource}?${stringify(query)}`;
         return httpClient(url).then(({ json }) => ({ data: json.results }));
@@ -68,7 +67,7 @@ export default {
         httpClient(`${apiUrl}/${resource}/${params.id}`, {
             method: 'PUT',
             body: JSON.stringify(params.data),
-        }).then(({ json }) => ({ data: json })),
+        }).then(({ json }) => ({ data: json.results })),
 
     updateMany: (resource, params) => {
         const query = {
@@ -85,7 +84,7 @@ export default {
             method: 'POST',
             body: JSON.stringify(params.data),
         }).then(({ json }) => ({
-            data: { ...params.data, id: json.id },
+            data: { ...params.data, id: json.results.id },
         })),
 
     delete: (resource, params) =>
@@ -95,7 +94,7 @@ export default {
 
     deleteMany: (resource, params) => {
         const query = {
-            filter: JSON.stringify({ id: params.ids}),
+            ids: params.ids.join(","),
         };
         return httpClient(`${apiUrl}/${resource}?${stringify(query)}`, {
             method: 'DELETE',

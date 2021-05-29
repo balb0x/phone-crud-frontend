@@ -2,18 +2,16 @@ import * as React from "react";
 import { List,
     Datagrid,
     TextField,
-    ReferenceField,
-    EditButton,
     Edit,
     SimpleForm,
     ReferenceInput,
     SelectInput,
+    Create,
     TextInput, } from 'react-admin';
 
 export const PhoneList = props => (
     <List {...props}>
         <Datagrid rowClick="edit">
-            <TextField source="id" />
             <TextField source="name" />
             <TextField label="Brand" source="brand.name" />
         </Datagrid>
@@ -21,13 +19,23 @@ export const PhoneList = props => (
 );
 
 export const PhoneEdit = props => (
-    <Edit {...props}>
+    <Edit {...props} mutationMode={"optimistic"}>
         <SimpleForm>
-            <ReferenceInput source="brand" reference="brand">
+            <ReferenceInput source="brand.id" reference="brand">
                 <SelectInput optionText="name" />
             </ReferenceInput>
-            <TextInput source="id" />
             <TextInput source="name" />
         </SimpleForm>
     </Edit>
+);
+
+export const PhoneCreate = props => (
+    <Create {...props}>
+        <SimpleForm>
+            <ReferenceInput source="brand.id" reference="brand">
+                <SelectInput optionText="name" />
+            </ReferenceInput>
+            <TextInput source="name" />
+        </SimpleForm>
+    </Create>
 );
