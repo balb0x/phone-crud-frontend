@@ -6,15 +6,15 @@ import { BrandList, BrandEdit, BrandCreate} from "./resources/brands";
 import Dashboard from './views/Dashboard';
 import authProvider from './providers/authProvider';
 import dataProvider from './providers/dataProvider';
+import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
+import AddToHomeScreenIcon from '@material-ui/icons/AddToHomeScreen';
 
 const App = () => (
     <Admin dashboard={Dashboard} authProvider={authProvider} dataProvider={dataProvider}>
         {permissions => [
-            <Resource name="phone" list={PhoneList} edit={PhoneEdit} create={PhoneCreate}/>,
+            <Resource name="phone" list={PhoneList} edit={PhoneEdit} create={PhoneCreate} icon={PhoneAndroidIcon}/>,
             // Only include the categories resource for admin users
-            permissions === 'admin'
-                ? <Resource name="brand" list={BrandList} edit={BrandEdit} create={BrandCreate}/>
-                : null,
+            <Resource name="brand" list={permissions === 'admin' ? BrandList : null} edit={permissions === 'admin' ? BrandEdit : null} create={permissions === 'admin' ? BrandCreate : null} icon={AddToHomeScreenIcon}/>
         ]}
     </Admin>
 );
