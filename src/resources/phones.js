@@ -21,7 +21,7 @@ export const PhoneList = props => (
 export const PhoneEdit = props => (
     <Edit {...props} mutationMode={"optimistic"}>
         <SimpleForm>
-            <ReferenceInput source="brand.id" reference="brand">
+            <ReferenceInput label="Brand" source="brand.id" reference="brand">
                 <SelectInput optionText="name" />
             </ReferenceInput>
             <TextInput source="name" />
@@ -32,7 +32,7 @@ export const PhoneEdit = props => (
 export const PhoneCreate = props => (
     <Create {...props}>
         <SimpleForm>
-            <ReferenceInput source="brand.id" reference="brand">
+            <ReferenceInput label="Brand" source="brand.id" reference="brand">
                 <SelectInput optionText="name" />
             </ReferenceInput>
             <TextInput source="name" />

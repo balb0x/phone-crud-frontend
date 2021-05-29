@@ -3,7 +3,7 @@ import * as React from "react";
 import { Admin, Resource } from 'react-admin';
 import { PhoneList, PhoneEdit, PhoneCreate} from "./resources/phones";
 import { BrandList, BrandEdit, BrandCreate} from "./resources/brands";
-import Dashboard from './Dashboard';
+import Dashboard from './views/Dashboard';
 import authProvider from './providers/authProvider';
 import dataProvider from './providers/dataProvider';
 

@@ -21,7 +21,14 @@ export default {
                 localStorage.setItem('permissions', decodedToken.permissions);
             });
     },
-    checkError: (error) => { /* ... */ },
+    checkError: ({status}) => {
+        if (status === 401 || status === 403) {
+            localStorage.removeItem('token');
+            localStorage.removeItem('permissions');
+            return Promise.reject();
+        }
+        return Promise.resolve();
+    },
     checkAuth: () => {
         return localStorage.getItem('token') ? Promise.resolve() : Promise.reject();
     },
