@@ -1,4 +1,5 @@
-# Phone CRUD Frontend
+# Phone CRUD Frontend [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 This repository contains the source code of the React App which exposes a web application with the ability to view/create/modify/delete entries of phones and phone brands. 
 
@@ -48,3 +49,7 @@ Also, if you want to build the application yourself, you can install the npm mod
 npm install
 npm run serve
 ```
+
+### License
+
+Phone CRUD Frontend is [MIT licensed](./LICENSE)
