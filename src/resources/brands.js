@@ -1,6 +1,25 @@
 import * as React from "react";
 import {List, Datagrid, TextField, NumberField, Edit, SimpleForm, NumberInput, TextInput, Create, required } from 'react-admin';
 
+/**
+ * brands.js
+ *
+ * Resource to view/edit/create the brand model. It contains
+ * a List, an Edit and a Create components. This resource is only
+ * available to users with admin privileges. The properties of
+ * the brand model are:
+ *
+ * name -> Name of the brand
+ * country -> Foundation country of the brand
+ * year -> Foundation year of the brand
+ * ceo -> Current CEO
+ * entry -> Current brand income in $
+ * isin -> International Securities Identification Numbering system
+ *
+ * @param props
+ * @returns {JSX.Element}
+ */
+
 export const BrandList = props => (
     <List {...props}>
         <Datagrid rowClick="edit">

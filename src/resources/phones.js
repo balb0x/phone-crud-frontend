@@ -14,6 +14,24 @@ import { List,
     NumberInput,
     required,} from 'react-admin';
 
+/**
+ * phones.js
+ *
+ * Resource to view/edit/create the phone model. It contains
+ * a List, an Edit and a Create components. The properties of
+ * the phone model are:
+ *
+ * name -> Name of the Phone
+ * brand -> Brand referencing the brand resource
+ * so -> Operative System
+ * water_proof -> Whether the phone is water resistant or not
+ * h5g -> Whether the phone has 5G Connectivity support
+ * ram -> Amount of ram in GB
+ *
+ * @param props
+ * @returns {JSX.Element}
+ */
+
 export const PhoneList = props => (
     <List {...props}>
         <Datagrid rowClick="edit">
